@@ -7,6 +7,8 @@ git clone https://github.com/AleksDer77/test.git
 
 cd test
 
+composer install
+
 make init
 
 ```
