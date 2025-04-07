@@ -21,10 +21,7 @@ key-generate:
 	@./vendor/bin/sail artisan key:generate
 
 migrate:
-	@./vendor/bin/sail artisan migrate
-
-migrate-fresh:
-	@./vendor/bin/sail artisan migrate:fresh
+	@./vendor/bin/sail artisan migrate --seed
 
 seed:
 	@./vendor/bin/sail artisan db:seed
@@ -32,6 +29,9 @@ seed:
 test:
 	@./vendor/bin/sail artisan test
 
-init: up composer-install key-generate migrate seed
+copy-env:
+	@test -f .env || cp .env.example .env
+
+init: copy-env up composer-install key-generate migrate
 
 .PHONY: up down restart build bash composer-install key-generate migrate migrate-fresh seed test init
