@@ -1,3 +1,4 @@
+
 up:
 	@./vendor/bin/sail up -d
 
@@ -34,4 +35,4 @@ copy-env:
 
 init: copy-env up composer-install key-generate migrate
 
-.PHONY: up down restart build bash composer-install key-generate migrate migrate-fresh seed test init
+.PHONY: up down restart build bash composer-install key-generate migrate seed test copy-env init
