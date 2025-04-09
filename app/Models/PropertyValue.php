@@ -13,14 +13,13 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
  * @property string $value
  * @method whenLoaded(string $string)
  */
-
 class PropertyValue extends Model
 {
     /** @use HasFactory<\Database\Factories\PropertyValueFactory> */
     use HasFactory;
 
     protected $fillable = [
-        'property_id', 'value'
+        'property_id', 'value',
     ];
 
     public function products(): BelongsToMany
