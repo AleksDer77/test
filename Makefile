@@ -22,14 +22,14 @@ key-generate:
 	@./vendor/bin/sail artisan key:generate
 
 migrate:
-	@./vendor/bin/sail artisan db:seed
+	@./vendor/bin/sail artisan db:wipe
 	@./vendor/bin/sail artisan migrate --seed
 
 create-test-db:
 	@./vendor/bin/sail exec -T mysql sh -c "mysql -usail -ppassword -e 'CREATE DATABASE IF NOT EXISTS testing;'"
 
 migrate-testing:	create-test-db
-	@./vendor/bin/sail artisan db:seed --env=testing
+	@./vendor/bin/sail artisan db:wipe --env=testing
 	@./vendor/bin/sail artisan migrate --seed --env=testing
 
 seed:
