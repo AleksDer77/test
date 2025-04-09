@@ -7,25 +7,14 @@ git clone https://github.com/AleksDer77/test.git
 
 cd test
 
-composer install
-
 make init
+
+make test
 
 ```
 
-### Пояснения
-
-Требуется оптимизация логики фильтрации, т.к. есть повторяющиеся запросы + создание индексов
-
-Возможно вынесение логики в отдельный сервис
-
-Требуются тесты
 
 
-### Варианты для проверки в браузере
-
-http://localhost/api/products/?properties[color][]=blue&properties[material][]=metal&properties[brand][]=xiaomi
-http://localhost/api/products/?properties[color][]=blue&properties[material][]=metal&properties[brand][]=philips
 
 
 
